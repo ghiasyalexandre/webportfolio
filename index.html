@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="shortcut icon" href="TemplateData/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script src="TemplateData/UnityProgress.js"></script>
+  <script src="Build/UnityLoader.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script type="module" src="js/three.js"></script>
+  <script src="https://threejs.org/build/three.js"></script> 
+
+  <script src="js/index.js"></script>
+  
+  <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/WebGL B.json", {onProgress: UnityProgress});
+      </script>
+
+	<title>Ghiasy Alexandre</title>
+
+</head>
+
+<!----------------------------- START BODY ------------------------------------------->
+<body>
+
+<canvas id="webgl" class="webgl"></canvas>
+<script>
+// Get the canvas element
+const canvas = document.getElementById("webgl");
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera( 75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000 );
+
+  const renderer = new THREE.WebGLRenderer({canvas, antialias: true});
+  renderer.setSize( canvas.clientWidth, canvas.clientHeight );
+
+  const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+  const material = new THREE.MeshBasicMaterial( { color: 0xff00ff } );
+  const cube = new THREE.Mesh( geometry, material );
+  scene.add( cube );
+
+  camera.position.z = 5;
+
+
+  function animate() {
+    requestAnimationFrame( animate );
+
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+
+    renderer.render( scene, camera );
+  };
+  animate();
+
+  spawnCubes();
+</script>
+
+
+  <div id="" class="navbar navbar-dark bg-dark p-2" style="background-color: rgba(10, 10, 10, 0.75);">
+  <a href="#" class="text-white pl-2"><i class="fa-brands fa-unity fa-xl"></i></a>
+  <a href="#footer" class="text-white pr-1" style="font-weight: bolder;">Contact Me</a>
+</div>
+
+<div class="main mt-4">
+  <h1 id="funHeader" class="funText titleText text-center">GHIASY DEVELOPER</h1>
+  <hr id="hrr" style="max-width: 60%;">
+</div>
+
+<div class="container fade wow" data-wow-duration="1s" data-wow-delay="0" style="padding-top: 2em;">
+<figure class="figure row" id="react-profile">
+  
+</figure>
+</div>
+
+
+<!----------------------------- UNITY GAME ------------------------------------------->
+<h1 class="funText container text-center" style="font-size: 3em; margin-top: 2rem; ">PROJECTS</h1>
+	<hr style="max-width: 60%;">
+
+<div class="container fade" style="padding-top: 0.5em;">
+    <div class="webgl-content pt-2"> 
+      <div id="unityContainer"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(0)"></div>
+      </div>
+    </div>
+  <h2 class="text-center captionTitle" style=" padding-top: 1rem;">Plight of Proteus</h2>
+  <hr>
+  <figcaption class="figure-caption text-center">
+  A 2D procedurally generated Rogue like adventure game.<br>
+  Controls: Movement - WASD  |  Dash - Space  |  Swap Weapon - Tab  |  Wand Abilities 2-6  |  Menu - Esc
+  </figcaption>
+</div>
+
+<!----------------------------- QUANTUM ATOM ------------------------------------------->
+<div class="container fade pt-3 wow" data-wow-duration="1s" data-wow-delay="0">
+	<figure class="figure" style="width: 100%;">
+  <div class="embed-responsive embed-responsive-16by9">
+  <iframe width="1920" height="1080" src="https://www.youtube.com/embed/6MUPqvrvFKc" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+  <h2 class="text-center captionTitle" style=" padding-top: 1rem;">Quantum Hydrogen Atom in VR</h2>
+    <hr>
+    <figcaption class="figure-caption text-center">
+  An educational visualization on Quantum principles of a Hydrogen atom in Virtual Reality.</figcaption>
+</figure>
+</div>
+
+
+<!----------------------------- PRICE REVIEW ------------------------------------------->
+<div class="container fade wow pt-3" data-wow-duration="1s" data-wow-delay="0">
+<figure class="figure">
+  <div class="embed-responsive embed-responsive-16by9">
+  <iframe width="1920" height="1080" src="https://www.youtube.com/embed/xcHfXqt_XFM" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+  <h2 class="text-center captionTitle" style="padding-top: 1rem;">Price Review</h2>
+    <hr>
+    <figcaption class="figure-caption text-center">
+  A product review website where users can see or post reviews and view other users. Implemented user sign-up/login system, product reviewing, profanity filter, review abuse reporting, and frontend administrator controls.
+</figcaption>
+</figure>
+</div>
+
+
+<!----------------------------- VRon ------------------------------------------->
+<div class="container fade wow pt-3" data-wow-duration="1s" data-wow-delay="0">
+<figure class="figure w-100 h-100">
+  <!-- <p class="text-right" style="font-size: 0.4rem; color: whitesmoke">I know vertical video ://</p> -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <ol class="carousel-indicators">
+    <!-- <li data-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li> -->
+    <!-- <li data-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-bs-slide-to="2"></li> -->
+  </ol> 
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <video class="d-block h-auto w-100" autoplay muted loop style=""><source src="img/VRonVid3.mp4?auto=yes&text=First slide" type="video/mp4" alt="First slide"></video>
+    </div>
+    <!-- <div class="carousel-item">
+      <video class="d-block h-auto w-100" autoplay muted loop style=""><source src="img/VRonVid2.mp4?auto=yes&bg=777&fg=555&text=Second slide" type="video/mp4" alt="Second slide"></video>
+    </div>
+<div class="carousel-item">
+      <video class="d-block h-auto w-100" autoplay muted loop style=""><source src="img/VRonVid3.mp4?auto=yes&bg=777&fg=555&text=Third slide" type="video/mp4" alt="Third slide"></video>
+    </div> -->
+  <!-- </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a> -->
+</div>
+
+  <h2 class="text-center captionTitle" style=" padding-top: 1rem;">VRon</h2>
+    <hr>
+  <figcaption class="figure-caption text-center">
+  A Mario Kart like virtual reality video-game with Tron like visuals.   
+  </figcaption>
+
+</figure>
+</div>
+
+<!----------------------------- SIMPLE C -------------------------------->
+<div class="container fade wow pt-3" data-wow-duration="1s" data-wow-delay="0">
+<figure class="figure" style="width: 100%">
+  <blockquote class="embedly-card" data-card-theme="dark"><h4><a href="https://github.com/ghiasyalexandre/SimpleC">GitHub - SimpleC</a></h4><p>A compiler that runs a made-up derivative of C.</p></blockquote>
+  <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
+
+  <h2 class="figure-caption text-center" style="padding-top: 1rem;">SimpleC Compiler</h2>
+    <hr>
+  <figcaption class="figure-caption text-center">
+    A Simplistic Version of C called SimpleC. Implemented a text parser to identify keywords, identifiers, variables, and function calls.</figcaption>
+
+</figure>
+</div>  
+
+
+<!----------------------------- CONTACT EMAIL -------------------------------------------
+<h1 id="contact" class="container text-center" style="font-size: 3em; margin-top: 3rem; ">CONTACT</h1>
+	<hr style="max-width: 60%;">
+
+<form class="container fade" style="margin-bottom: 3rem;" action="php/index.php">
+  <div class="form-group">
+    <label for="email">Your Email Address:</label>
+    <input type="email" class="form-control" id="email" required placeholder="email@hottymail.com">
+  </div>
+  <hr style="max-width: 100%">
+  <div class="form-group">
+    <label for="subject">Subject:</label>
+    <input type="text" class="form-control" id="subject" required placeholder="Oompa Loompas">
+  </div>
+  <hr style="max-width: 100%">
+  <div class="form-group">
+    <label for="comment">Comment:</label>
+    <textarea rows="5" cols="50" class="form-control" id="comment" autocomplete="on" required spellcheck="true" maxlength="500" name="comment" placeholder="Enter comment here..."></textarea>
+  </div>
+  <hr style="max-width: 100%">
+  <div class="text-center col-md-12" >
+    <button type="submit" class="btn btn-secondary" style="width: 15%; font-weight: bolder;">Submit</button>	
+  </div>
+</form>
+--->
+
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- Load our React component. -->
+  <script src="js/profile.js"></script>
+
+</body>
+
+
+<footer class="pt-4">
+
+	<div id="footer" class="footer fun navbar-dark bg-dark mx-auto p-2" style="text-align: center; background-color: rgba(10, 10, 10, 0.75);">
+		<a href="https://github.com/ghiasyalexandre" class="pl-1" target="_blank" style="float: left;">Github<i class="fab fa-github fa-lg pl-2"></i>
+    </a>
+		<a href="https://www.linkedin.com/in/ghiasy-a/" target="_blank" style="float: center;">LinkedIn<i class="fab fa-linkedin-in fa-lg pl-2"></i></a>
+		<a href="https://docs.google.com/document/d/19I8bSM32SW5Uj1uzMZR66mZxYbtSH_zTVHioR0nKX4I/edit?usp=sharing" class="pr-1" target="_blank" style="float: right;">Resume<i class="fa fa-file-pdf fa-lg pl-2"></i></a>
+	</div>
+
+</footer>
+</html>
